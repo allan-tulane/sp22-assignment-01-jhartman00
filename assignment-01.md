@@ -2,7 +2,8 @@
 
 # CMPS 2200 Assignment 1
 
-**Name:**_________________________
+**Name:** Jamie Hartman  
+**Name:** Charles Tyndal
 
 
 In this assignment, you will learn more about asymptotic notation, parallelism, functional languages, and algorithmic cost models. As in the recitation, some of your answer will go here and some will go in `main.py`. You are welcome to edit this `assignment-01.md` file directly, or print and fill in by hand. If you do the latter, please scan to a file `assignment-01.pdf` and push to your github repository. 
@@ -12,34 +13,42 @@ In this assignment, you will learn more about asymptotic notation, parallelism, 
 1. (2 pts ea) **Asymptotic notation** (12 pts)
 
   - 1a. Is $2^{n+1} \in O(2^n)$? Why or why not? 
-.  
-.  
-.  
+
+    - This is true becuase, by definition of Big O f(n) is  O(g(n)) if eventually a constant multiple of g is bigger than or equal to f.
+    - In this example if c = 3 and k = 1 we have 3*2^n >= 2^n+1 for all of n >= 1.
+    - Therefore, 2^n+1 is O(2^n)
 .  
 . 
   - 1b. Is $2^{2^n} \in O(2^n)$? Why or why not?     
-.  
-.  
-.  
+  
+    - In this example if c = 2 and k = 1 we have 2*2^2^n >= 2^n for all of n >= 1.
+    - Therefore, 2^n+1 is O(2^n)
 .  
 .  
   - 1c. Is $n^{1.01} \in O(\mathrm{log}^2 n)$?    
-.  
-.  
+
+    - In this example if c = 2 and k = 1 we have 2*n^1.01 >= log^2*n for all of n >= 1.
+    - Therefore n^1.01 is O(log^2 n)
 .  
 .  
 
   - 1d. Is $n^{1.01} \in \Omega(\mathrm{log}^2 n)$?  
+
+    - In this example if c = 2 and k = 1 we have 2*n^1.01 >= log^2*n for all of n >= 1.
+    - Therefore n^1.01 is O(log^2 n) and not Omega(log^2 n)
 .  
 .  
-.  
-.  
-  - 1e. Is $\sqrt{n} \in O((\mathrm{log} n)^3)$?  
-.  
-.  
+  - 1e. Is $\sqrt{n} \in O((\mathrm{log} n)^3)$?
+
+    - In this example if c = 2 and k = 1 we have 2*sqrt(n) >= (log n)^3 for all of n>=1
+    - Therefore sqrt(n) is O((log x)^3)
 .  
 .  
   - 1f. Is $\sqrt{n} \in \Omega((\mathrm{log} n)^3)$?  
+
+    - In this example if c = 2 and k = 1 we have 2*sqrt(n) >= (log n)^3 for all of n >= 1
+    - therefor sqrt(n) is O((log x)^3) and not Omega((log x)^3)
+.  
 .  
 
 
@@ -61,13 +70,12 @@ $$
   - 2a. (6 pts) Translate this to Python code -- fill in the `def foo` method in `main.py`  
 
   - 2b. (6 pts) What does this function do, in your own words?  
-
-.  
-.  
-.  
-.  
-.  
-.  
+    - This function takes in a number (x)
+    - if x is less than or equal to 1 it returns it.
+    - if x is greater than 1 it returns x*foo(x-1).
+    - This calls foo on x-1 until x = 1 or 0 (it shouldnt ever get to 0)
+    - Once it gets to 1 it returns 1 and multiplies it by the x that origionally called that layer (i.e. x from one depth higher)
+    - When it gets to the origional layer (depth = 0) it returns the final number
 .  
 .  
   

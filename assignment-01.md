@@ -100,36 +100,17 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
 
   - 3b. (4 pts) What is the Work and Span of this implementation?  
 
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-
+  Since work is defined by W(n) = aW(n/b) + f(n), the work and subsequently span of this implementation would simply be O(1) for this as the formula has no recursiveness to it.   
 
   - 3c. (7 pts) Next, implement a `longest_run_recursive`, a recursive, divide and conquer implementation. This is analogous to our implementation of `sum_list_recursive`. To do so, you will need to think about how to combine partial solutions from each recursive call. Make use of the provided class `Result`.   
 
   - 3d. (4 pts) What is the Work and Span of this sequential algorithm?  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-
+  Since work is defined by W(n) = aW(n/b) + f(n), where in this case both a and b are = 2, W(1) = O(1). 
+  Knowing this we can simplify the function down to 2*O(n), or O(n) for the work, and O(n) for the span. 
 
   - 3e. (4 pts) Assume that we parallelize in a similar way we did with `sum_list_recursive`. That is, each recursive call spawns a new thread. What is the Work and Span of this algorithm?  
 
-.  
+.  The work for this would be the same as the sequential algorith, being 2*O(n), while span would end up as O(logn) for the parallelized function.
 .  
 .  
 .  
